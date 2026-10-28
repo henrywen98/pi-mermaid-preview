@@ -1,0 +1,61 @@
+{
+  "name": "pi-mermaid-preview",
+  "version": "0.1.0",
+  "description": "On-demand Mermaid diagrams in Pi, with bounded input and a timeout-controlled renderer.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Henry WEN",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrywen98/pi-mermaid-preview.git"
+  },
+  "homepage": "https://github.com/henrywen98/pi-mermaid-preview#readme",
+  "bugs": {
+    "url": "https://github.com/henrywen98/pi-mermaid-preview/issues"
+  },
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "mermaid",
+    "terminal",
+    "diagrams"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "files": [
+    "index.ts",
+    "src/",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "SECURITY.md",
+    "LICENSES/"
+  ],
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "beautiful-mermaid": "1.1.3"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": ">=1.4.0",
+    "@earendil-works/pi-tui": ">=1.4.0"
+  },
+  "overrides": {
+    "undici": "8.12.2"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.4.0",
+    "@earendil-works/pi-tui": "1.4.0",
+    "@types/node": "^22.0.0",
+    "typescript": "~5.9.3"
+  }
+}
